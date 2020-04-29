@@ -1,24 +1,13 @@
-Beijing
+Montreal
 10
 10,15,18,20
-Beijing
+New York
 10
 10,15,18,20
-Beijing
+Hong Kong
 10
 10,15,18,20
-Beijing
+Maine
 10
 10,15,18,20
-Beijing
-10
-10,15,18,20
-Beijing
-10
-10,15,18,20
-Beijing
-10
-10,15,18,20
-Beijing
-10
-10,15,18,20
+

@@ -10,10 +10,10 @@ public class EditCitiesMethod {
 
         for (int i = SelectedCity; i < MainMenu.cityDatabase.length - 1; i++) {
 
-            if (MainMenu.cityDatabase[i].getCityName().equals("-") == false) {
+            if (MainMenu.cityDatabase[i].getWindSpeed() > 0) {
 
                 MainMenu.cityDatabase[i] = MainMenu.cityDatabase[i + 1];
-                lastCity = 1;
+                lastCity = i;
 
             }
 

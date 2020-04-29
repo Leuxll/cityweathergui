@@ -21,7 +21,7 @@ public class EditCities extends JFrame{
         citiesComboBox.removeAllItems();
 
         for (int i = 0; i < MainMenu.cityDatabase.length; i++) {
-            if (MainMenu.cityDatabase[i].getCityName().equals("-") == false) {
+            if (MainMenu.cityDatabase[i].getWindSpeed() > -1) {
                 citiesComboBox.addItem(MainMenu.cityDatabase[i].getCityName());
 
             }
@@ -53,12 +53,22 @@ public class EditCities extends JFrame{
 
                 SetCity();
                 System.out.println(selectedCity);
-                ResetComboBox();
-                try {
-                    SaveFile.SaveData();
-                    System.out.println("File has been saved.");
-                } catch (IOException ioException) {
-                    System.out.println("Could not save file.");
+                String[] options = {"Confirm", "Cancel"};
+                int confirmation = JOptionPane.showOptionDialog(null, "Are you sure you want to delete " +
+                                    MainMenu.cityDatabase[selectedCity].getCityName() + "?", "Confirmation", JOptionPane.PLAIN_MESSAGE,
+                                    1, null, options, options[0]);
+
+                if (confirmation == 0) {
+
+                    EditCitiesMethod.DeleteCity(selectedCity);
+                        ResetComboBox();
+                    try {
+                        SaveFile.SaveData();
+                        JOptionPane.showMessageDialog(rootPane, "Delete Successful");
+                    } catch (IOException ioException) {
+                        System.out.println("Could not save file.");
+                    }
+
                 }
 
             }
