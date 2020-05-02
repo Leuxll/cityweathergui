@@ -5,16 +5,18 @@ import com.sun.tools.javac.Main;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ContainerAdapter;
 import java.io.IOException;
 
 public class EditCities extends JFrame{
 
-    int selectedCity = 0;
+    public static int selectedCity = 0;
 
     private JPanel editCitiesPanel;
     private JButton mainMenuButton;
     private JComboBox citiesComboBox;
     private JButton deleteCityButton;
+    private JButton addCityButton;
 
     public void ResetComboBox() {
 
@@ -73,12 +75,23 @@ public class EditCities extends JFrame{
 
             }
         });
+
+        addCityButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                SetCity();
+                EditCity obj = new EditCity("Edit Selected City");
+                obj.setVisible(true);
+                dispose();
+
+            }
+        });
     }
 
     public void SetCity() {
 
         selectedCity = citiesComboBox.getSelectedIndex();
-        EditCitiesMethod.DeleteCity(selectedCity);
 
     }
 

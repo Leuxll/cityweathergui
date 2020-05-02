@@ -14,7 +14,7 @@ public class MainMenu extends JFrame {
     private JPanel mainMenuPanel;
     private JButton displayDatabaseButton;
     private JButton editCitiesButton;
-    private JButton saveButton;
+    private JButton addANewCityButton;
     private JButton exitAndSaveButton;
 
 
@@ -39,6 +39,16 @@ public class MainMenu extends JFrame {
                 EditCities obj = new EditCities("Edit Cities");
                 obj.setVisible(true);
                 dispose();
+            }
+        });
+        addANewCityButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                NewCity obj = new NewCity("New City");
+                obj.setVisible(true);
+                dispose();
+
             }
         });
     }

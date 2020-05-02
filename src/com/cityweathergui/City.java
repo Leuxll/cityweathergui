@@ -44,6 +44,26 @@ public class City {
         return this.tempreture;
     }
 
+    String getTempString() {
+
+        String TempString= "";
+
+        for (int i  = 0; i < tempreture.length; i++) {
+
+            if (i < tempreture.length - 1) {
+
+                TempString += tempreture[i] + ", ";
+
+            } else {
+                TempString += tempreture[i];
+            }
+
+        }
+
+        return TempString;
+
+    }
+
     //setter or mutator methods
     void setCityName(String name){
         this.cityName = name;
